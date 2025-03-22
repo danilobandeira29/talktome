@@ -42,7 +42,7 @@ func main() {
 			}
 		}
 		if errSend := c.SendMessage(clientMessage); errSend != nil {
-			if _, errF := fmt.Fprintf(os.Stdout, errSend.Error()); errF != nil {
+			if _, errF := fmt.Fprintf(os.Stdout, "%s\n", errSend.Error()); errF != nil {
 				log.Printf("error sending message to writer: %v\n", errF)
 				return
 			}
